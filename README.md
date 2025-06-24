@@ -7,4 +7,3 @@ For time range, you can leave blank to select all time ranges for the given vari
 20410101-20501231, 20110101-20201231, 20510101-20601231, 20310101-20401231
 ```
 Please make sure all 30 ensemble members pass before reporting.
-
