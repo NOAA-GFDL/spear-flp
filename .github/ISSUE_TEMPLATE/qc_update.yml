@@ -45,6 +45,6 @@ body:
   - type: textarea
     id: explanation
     attributes:
-      label: "Explain the steps taken to ensure quality control:"
+      label: "Explain the steps taken for quality control:"
     validations:
       required: true
