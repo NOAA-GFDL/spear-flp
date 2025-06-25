@@ -34,7 +34,7 @@ body:
   - type: dropdown
     id: pass_qc
     attributes:
-      label: "Do the datasets pass the quality assurance checks?" 
+      label: "Do the datasets pass the quality control checks?" 
       description: "If they do not pass, please explain below."
       options:
         - "No"
@@ -45,6 +45,6 @@ body:
   - type: textarea
     id: explanation
     attributes:
-      label: "Explain the steps taken to ensure quality assurance:"
+      label: "Explain the steps taken to ensure quality control:"
     validations:
       required: true
