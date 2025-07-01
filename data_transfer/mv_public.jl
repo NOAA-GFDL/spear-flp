@@ -42,7 +42,7 @@ function main()
 
     for x in unique(to_move[!,:variable_id])
         for exp in unique(to_move[!,:experiment_id])
-            push!(var_exp, (x, short_exp(exp)))
+            push!(String(var_exp), (x, short_exp(exp)))
             search_dict = Dict(:variable_id => x, :experiment_id => exp)
 
             mv_var = search(to_move, search_dict)
@@ -70,7 +70,7 @@ function main()
             end
         end
     end
-    
+
     var_string = join(var_exp,',')
     git_push("Moved $var_string")
 end
