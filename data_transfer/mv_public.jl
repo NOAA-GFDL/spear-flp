@@ -24,7 +24,7 @@ function fake_qc(d...)
     return catalog
 end
 
-function main(catalog)
+function main()
     git_pull()
     # catalog = DataFrame(CSV.File(catalog_csv; types=Dict("who_qc" => String)))
     catalog = fake_qc(:variable_id => "snow", :experiment_id => "SPEAR_c192_o1_Scen_SSP585_IC2011_K50")
