@@ -42,7 +42,7 @@ function main()
 
     for x in unique(to_move[!,:variable_id])
         for exp in unique(to_move[!,:experiment_id])
-            push!(String(var_exp), (x, short_exp(exp)))
+            push!(var_exp, (String(x), short_exp(exp)))
             search_dict = Dict(:variable_id => x, :experiment_id => exp)
 
             mv_var = search(to_move, search_dict)
