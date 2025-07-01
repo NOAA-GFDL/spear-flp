@@ -7,11 +7,32 @@ using .CatalogTools
 const catalog_csv = (@__DIR__) * "/../catalog_blue.csv"
 const catalog_csv2 = (@__DIR__) * "/../catalog_blue2.csv"
 
+function git_pull()
+    run(Cmd(`git checkout dev`))
+    run(Cmd(`git pull`))
+end
+
+function git_push(msg)
+    run(Cmd(`git add .`))
+    run(Cmd(`git commit -m $msg`))
+    run(Cmd(`git push`))
+end
+
+function fake_qc(d...)
+    catalog = DataFrame(CSV.File(catalog_csv; types=Dict("who_qc" => String)))
+    update!(search(catalog, d...), :pass_qc => true, :who_qc => "ariaradick")
+    return catalog
+end
+
 function main(catalog)
+    git_pull()
     # catalog = DataFrame(CSV.File(catalog_csv; types=Dict("who_qc" => String)))
+    catalog = fake_qc(:variable_id => "snow", :experiment_id => "SPEAR_c192_o1_Scen_SSP585_IC2011_K50")
     to_move = search(catalog, Dict(:pass_qc => true, :path => "TFTEST"))
 
-    for x in unique(to_move[!,:variable_id])
+    vars_to_move = unique(to_move[!,:variable_id])
+
+    for x in vars_to_move
         for exp in unique(to_move[!,:experiment_id])
             search_dict = Dict(:variable_id => x, :experiment_id => exp)
 
@@ -40,12 +61,7 @@ function main(catalog)
             end
         end
     end
+    git_push("Moved $vars_to_move")
 end
 
-function fake_qc(d...)
-    catalog = DataFrame(CSV.File(catalog_csv; types=Dict("who_qc" => String)))
-    update!(search(catalog, d...), :pass_qc => true, :who_qc => "ariaradick")
-    return catalog
-end
-
-main(fake_qc(:variable_id => "snow", :experiment_id => "SPEAR_c192_o1_Scen_SSP585_IC2011_K50"))
+main()
