@@ -144,5 +144,5 @@
   "description": null,
   "title": null,
   "last_updated": "2023-05-07T16:35:52Z",
-  "catalog_file": "https://raw.githubusercontent.com/ariaradick/projections-tf-spear/refs/heads/main/catalog_blue.csv"
+  "catalog_file": "https://raw.githubusercontent.com/NOAA-GFDL/spear-flp/refs/heads/main/catalog_blue.csv"
 }
