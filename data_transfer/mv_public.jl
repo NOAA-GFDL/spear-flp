@@ -71,7 +71,7 @@ function main()
         end
     end
 
-    var_string = join(var_exp,',')
+    var_string = join("(" .* join.(var_exp,", ") .* ")", ", ")
     git_push("Moved $var_string")
 end
 
