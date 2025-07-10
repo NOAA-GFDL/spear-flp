@@ -1,0 +1,11 @@
+variable_id, realm            , frequency, chunk_freq
+ssh        , ocean            , mon      , 10yr
+MLD_003    , ocean            , mon      , 10yr
+slp        , atmos_4xdaily    , 6hr      , 10yr
+precip     , atmos_4xdaily_avg, 6hr      , 10yr
+snow_tot   , atmos_4xdaily_avg, 6hr      , 10yr
+wind_ref   , atmos_daily      , day      , 10yr
+t_ref_max  , atmos_daily      , day      , 10yr
+t_ref_min  , atmos_daily      , day      , 10yr
+snow       , land_daily       , day      , 10yr
+WVP        , atmos            , mon      , 10yr
