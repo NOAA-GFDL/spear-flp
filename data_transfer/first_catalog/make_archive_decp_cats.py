@@ -57,5 +57,22 @@ def main(directory):
 
     combine_cats(d, "catalog_full")
 
+    # remove the individual catalogs
+    for i in range(1,31):
+        n = 3*math.floor((i-1)/3)
+        n1 = str(n+1).zfill(2)
+        n2 = str(n+3).zfill(2)
+        ix = str((i-1)%3 + 1).zfill(2)
+        iz = str(i).zfill(2)
+        path1 = "/archive/wfc/SPEAR/SPEAR_c192_o1_Hist_AllForc_IC1921_K50_ens_{}_{}/pp_ens_{}".format(n1,n2,ix)
+        path2 = "/archive/wfc/SPEAR/SPEAR_c192_o1_Scen_SSP585_IC2011_K50_ens_{}_{}/pp_ens_{}".format(n1,n2,ix)
+        output1 = directory+"/archive_hist_{}".format(iz)
+        output2 = directory+"/archive_scen_{}".format(iz)
+        # print("{}_{}/{}".format(n1,n2,ix))
+        os.system('rm {}.*'.format(output1))
+        os.system('rm {}.*'.format(output2))
+    os.system('rm {}.*'.format(out1_decp))
+    os.system('rm {}.*'.format(out2_decp))
+
 if __name__ == "__main__":
     main(sys.argv[1])
