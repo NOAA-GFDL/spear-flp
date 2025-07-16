@@ -24,7 +24,7 @@ def main(catalog_path, variable_df, output_name):
 
     directory = os.path.dirname(catalog_path)+"/"
 
-    search_to_subcat(directory, catalog_path, cat, var_df)
+    search_to_subcat(directory, output_name, cat, var_df)
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2], sys.argv[3])
