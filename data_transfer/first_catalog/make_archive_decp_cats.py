@@ -15,7 +15,7 @@ def combine_cats(directory, output_name):
     for x in files:
         if x.endswith('.csv'):
             df1 = pd.read_csv(directory+x)
-            df1 = df1[df1['frequency'] != 'fx']
+            df1 = df1[(df1['frequency'] != 'fx') & (df1['cell_methods'] == 'ts')]
             dfs.append(df1.copy(deep=True))
     concat_df = pd.concat(dfs, ignore_index=True)
     concat_df.to_csv(directory+output_name+".csv", header=False, index=None, mode='a')
@@ -31,6 +31,7 @@ def main(directory):
 
     # make a catalog for each ensemble member, the folder numbering is weird
     for i in range(1,31):
+    # for i in range(1,2):
         n = 3*math.floor((i-1)/3)
         n1 = str(n+1).zfill(2)
         n2 = str(n+3).zfill(2)
