@@ -1,4 +1,4 @@
-# Click [here](https://github.com/NOAA-GFDL/spear-flp/issues/new?template=qc_update.yml) to make a QC report
+# [Click here to make a QC report](https://github.com/NOAA-GFDL/spear-flp/issues/new?template=qc_update.yml)
 
 Or, go to "Issues", press the "New issue" button in the top right, and then choose "QC Update". The form will ask a few questions. This helps us record the status of the QC, and initiate next steps.
 
