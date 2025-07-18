@@ -14,17 +14,16 @@ The data is available on a Globus endpoint. We recommend using Globus to downloa
 
 1. Follow the instructions to set up [Globus Connect Personal](https://www.globus.org/globus-connect-personal) if you don't already have a Globus endpoint on the machine you wish to transfer the files to.
 
-2. Install [Globus CLI](https://docs.globus.org/cli/). Make sure to log in by running
+2. Install [Globus CLI](https://docs.globus.org/cli/). Make sure to log in by running the following in your terminal:
 ```
 $ globus login
 ```
-in your terminal.
 
 3. Create a text file that lists the paths to the datasets that you're interested in by using the [search_catalog.ipynb](https://github.com/NOAA-GFDL/spear-flp/blob/dev/examples/search_catalog.ipynb) example notebook.
 
-4. In your terminal, run the following
+4. In your terminal, run the following:
 ```
-# this is the UUID for the collection:
+# this is the UUID for the source collection:
 $ SPEAR_FLP_RESTRICTED="20987ccd-15d0-4719-a60c-86ab17d6a393"
 
 # replace with the path to the directory you want the data saved:
