@@ -34,5 +34,5 @@ $ SPEAR_FLP_RESTRICTED="20987ccd-15d0-4719-a60c-86ab17d6a393"
 $ GLOBUS_DEST="$(globus endpoint local-id):/path/to/directory/"
 
 # Run the transfer in batch mode:
-cat /path/to/my_files.txt | globus transfer $SPEAR_FLP_RESTRICTED $GLOBUS_DEST --batch -
+$ cat /path/to/my_files.txt | globus transfer $SPEAR_FLP_RESTRICTED $GLOBUS_DEST --batch -
 ```
