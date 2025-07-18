@@ -10,7 +10,7 @@ Please make sure all 30 ensemble members pass before reporting.
 
 # (Recommended) Accessing the data:
 
-The data is available on a Globus endpoint. We recommend using Globus to download the data to your local machine, as it can offer higher download speeds (vs using scp) and automatically resumes file transfers if there is an interruption. You will need Globus running on your machine ([Globus Connect Personal](https://www.globus.org/globus-connect-personal), usually) and the [Globus CLI](https://docs.globus.org/cli/) to follow these steps.
+The data is available on a Globus endpoint. We recommend using Globus CLI to download the data to your local machine, as it can offer the ability to download only the files of interest with a batch transfer. You will need Globus running on your machine ([Globus Connect Personal](https://www.globus.org/globus-connect-personal), usually) and the [Globus CLI](https://docs.globus.org/cli/) to follow these steps.
 
 1. Follow the instructions to set up [Globus Connect Personal](https://www.globus.org/globus-connect-personal) if you don't already have a Globus endpoint on the machine you wish to transfer the files to.
 
