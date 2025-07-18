@@ -8,7 +8,7 @@ For time range, you can leave blank to select all time ranges for the given vari
 ```
 Please make sure all 30 ensemble members pass before reporting.
 
-# [Recommended] Accessing the data:
+# (Recommended) Accessing the data:
 
 The data is available on a Globus endpoint. We recommend using Globus to download the data to your local machine, as it can offer higher download speeds (vs using scp) and automatically resumes file transfers if there is an interruption. You will need Globus running on your machine ([Globus Connect Personal](https://www.globus.org/globus-connect-personal), usually) and the [Globus CLI](https://docs.globus.org/cli/) to follow these steps.
 
