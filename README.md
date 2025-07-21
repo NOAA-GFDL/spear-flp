@@ -19,9 +19,14 @@ The data is available on a Globus endpoint [at this link](https://app.globus.org
 $ globus login
 ```
 
-3. Create a text file that lists the paths to the datasets that you're interested in by using the [search_catalog.ipynb](https://github.com/NOAA-GFDL/spear-flp/blob/main/examples/search_catalog.ipynb) example notebook.
+3. Create a text file that lists the paths to the datasets that you're interested in by using the [search_catalog.ipynb](https://github.com/NOAA-GFDL/spear-flp/blob/main/examples/search_catalog.ipynb) example notebook. The file should be formatted
+```
+</path/to/source_file_1.ext> </path/to/destination_file_1.ext>
+</path/to/source_file_2.ext> </path/to/destination_file_2.ext>
+...
+```
 
-4. In your terminal, run the following:
+5. In your terminal, run the following:
 ```
 # this is the UUID for the source collection:
 $ SPEAR_FLP_RESTRICTED="20987ccd-15d0-4719-a60c-86ab17d6a393"
