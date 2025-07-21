@@ -15,7 +15,7 @@ def combine_cats(directory, output_name):
     for x in files:
         if x.endswith('.csv'):
             df1 = pd.read_csv(directory+x)
-            df1 = df1[df1['frequency'] != 'fx']
+            df1 = df1[(df1['frequency'] != 'fx') & (df1['cell_methods'] == 'ts')]
             dfs.append(df1.copy(deep=True))
     concat_df = pd.concat(dfs, ignore_index=True)
     concat_df.to_csv(directory+output_name+".csv", header=False, index=None, mode='a')
@@ -31,6 +31,7 @@ def main(directory):
 
     # make a catalog for each ensemble member, the folder numbering is weird
     for i in range(1,31):
+    # for i in range(1,2):
         n = 3*math.floor((i-1)/3)
         n1 = str(n+1).zfill(2)
         n2 = str(n+3).zfill(2)
@@ -56,6 +57,23 @@ def main(directory):
     # combine all the cats
 
     combine_cats(d, "catalog_full")
+
+    # remove the individual catalogs
+    for i in range(1,31):
+        n = 3*math.floor((i-1)/3)
+        n1 = str(n+1).zfill(2)
+        n2 = str(n+3).zfill(2)
+        ix = str((i-1)%3 + 1).zfill(2)
+        iz = str(i).zfill(2)
+        path1 = "/archive/wfc/SPEAR/SPEAR_c192_o1_Hist_AllForc_IC1921_K50_ens_{}_{}/pp_ens_{}".format(n1,n2,ix)
+        path2 = "/archive/wfc/SPEAR/SPEAR_c192_o1_Scen_SSP585_IC2011_K50_ens_{}_{}/pp_ens_{}".format(n1,n2,ix)
+        output1 = directory+"/archive_hist_{}".format(iz)
+        output2 = directory+"/archive_scen_{}".format(iz)
+        # print("{}_{}/{}".format(n1,n2,ix))
+        os.system('rm {}.*'.format(output1))
+        os.system('rm {}.*'.format(output2))
+    os.system('rm {}.*'.format(out1_decp))
+    os.system('rm {}.*'.format(out2_decp))
 
 if __name__ == "__main__":
     main(sys.argv[1])
