@@ -19,6 +19,7 @@ body:
       label: Experiment
       description: Which experiment do the checked datasets correspond to?
       options:
+        - All
         - Historical
         - SSP585
       default: 0
