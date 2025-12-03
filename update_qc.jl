@@ -1,11 +1,28 @@
 using DataFrames
 using CSV
+using Dates
 
 const catalog_csv = "catalog_blue.csv"
 const allowed_keys = ["variable_id", "experiment_id", "time_range", "member_id"]
+const datetime_format = DateFormat("yyyymmddHH")
 
 function string_to_vector(x)
     strip.(split(strip(x, ['[',']',' ']),','))
+end
+
+function convert_timerange(x::String)
+    y = split(x,'-')
+    return DateTime.(y, datetime_format)
+end
+
+function test_timerange(t::String, reported_times)
+    truth = false
+    x = convert_timerange(t)
+    for rt in reported_times
+        truth |= ((rt[1] <= x[1] < rt[2]) & 
+                  (rt[1] <  x[2] < rt[2] + Dates.Year(1)))
+    end
+    return truth
 end
 
 function parse_body(input_string, cat_df)
@@ -32,13 +49,11 @@ function parse_body(input_string, cat_df)
     allowed_times = unique(cat_df[truths,:time_range])
 
     if (y[3] ≠ "_No response_")
-        time_ranges = string_to_vector(y[3])
-        for t in time_ranges
-            if t ∉ allowed_times
-                error("Invalid time range entered.")
-            end
-        end
-        var_dict[:time_range] = time_ranges
+        reported_times = convert_timerange.(string_to_vector(y[3]))
+        var_dict[:time_range] = allowed_times[test_timerange.(
+            allowed_times,
+            (reported_times,)
+        )]
     end
 
     if y[4] == "Yes"
