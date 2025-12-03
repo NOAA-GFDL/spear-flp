@@ -19,7 +19,6 @@ body:
       label: Experiment
       description: Which experiment do the checked datasets correspond to?
       options:
-        - All
         - Historical
         - SSP585
       default: 0
@@ -29,16 +28,16 @@ body:
     id: time_range
     attributes:
       label: Time Range
-      description: Leave blank to select all time ranges. Enter multiple with commas separating them.
-      placeholder: Leave blank to select all
+      description: 'Date format: "yyyy[mmddHH]-yyyy[mmddHH]" (see filenames). Enter multiple with commas separating them. Leave blank to select all time ranges for the specified experiment.'
+      placeholder: 1921-1940, 1951-1980
   - type: dropdown
     id: pass_qc
     attributes:
       label: "Do the datasets pass the quality control checks?" 
       description: "If they do not pass, please explain below."
       options:
-        - "No"
         - "Yes"
+        - "No"
       default: 0
     validations:
       required: true
