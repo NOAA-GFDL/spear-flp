@@ -48,7 +48,7 @@ function parse_body(input_string, cat_df)
 
     allowed_times = unique(cat_df[truths,:time_range])
 
-    if (y[3] ≠ "_No response_")
+    if (y[3] ≠ "_No response_" & y[3] ≠ "")
         reported_times = convert_timerange.(string_to_vector(y[3]))
         var_dict[:time_range] = allowed_times[test_timerange.(
             allowed_times,
