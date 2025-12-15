@@ -1,5 +1,4 @@
 ---
-title: "SPEAR-FLP Data Stewardship"
 layout: single
 ---
 
