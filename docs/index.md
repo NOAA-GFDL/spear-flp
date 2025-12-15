@@ -13,8 +13,5 @@ Community contributions through GitHub issues, discussions and PRs are accepted.
 ---
 
 **Explore**
-- [People](/people/)
-- [Outreach](/outreach/)
-
-
-[Test People page](/people/)
+- [People](/spear-flp/people/)
+- [Outreach](/spear-flp/outreach/)
