@@ -1,5 +1,14 @@
 title: SPEAR-FLP (Forward Looking Projections Documentation and Outreach
-description: Minimal is a theme for GitHub Pages.
-show_downloads: true
-google_analytics:
-remote_theme: pages-themes/minimal@v0.2.0
+subtitle: "Flexible Large-Ensemble Platform"
+name: "SPEAR-FLP"
+description: "Documentation, presentations, and outreach for the SPEAR Flexible Large-Ensemble Platform."
+url: "https://<org>.github.io"
+#baseurl: "/spear-flp-docs"   # remove if using spear-flp.github.io
+
+theme: minimal-mistakes-jekyll
+markdown: kramdown
+permalink: pretty
+
+minimal_mistakes_skin: "default"  # or "air", "contrast"
+
+
