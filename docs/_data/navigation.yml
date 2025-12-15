@@ -1,8 +1,5 @@
----
-title: "Outreach"
-layout: single
-permalink: /outreach/
----
-- Conference proceedings 
-- Other presentations 
-- Tutorials and Documentation links
+main:
+  - title: "People"
+    url: /people/
+  - title: "Outreach"
+    url: /outreach/
