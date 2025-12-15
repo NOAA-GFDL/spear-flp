@@ -8,4 +8,8 @@ permalink: pretty
 
 minimal_mistakes_skin: "default"  # or "air", "contrast"
 
+plugins:
+  - jekyll-include-cache
+  
+
 
