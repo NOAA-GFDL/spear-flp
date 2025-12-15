@@ -18,4 +18,4 @@ permalink: /outreach/
 **3. Leveraging the Power of Data Catalogs in Data Publication Workflows**
 
 - **Abstract:** <https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1989155>
-- **iPoster:** tbd
+- **iPoster:** <https://agu25.ipostersessions.com/default.aspx?s=F1-A9-AD-44-59-08-94-C5-0A-74-AF-98-C5-25-36-7A>
