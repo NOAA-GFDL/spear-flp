@@ -1,5 +1,5 @@
 main:
   - title: "People"
-    url: /people/
+    url: /docs/people/
   - title: "Outreach"
-    url: /outreach/
+    url: /docs/outreach/
