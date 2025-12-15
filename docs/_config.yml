@@ -11,6 +11,8 @@ baseurl: "/spear-flp"
 
 plugins:
   - jekyll-include-cache
+include:
+  - _pages
   
 
 
