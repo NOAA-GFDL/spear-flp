@@ -2,7 +2,7 @@ title: SPEAR-FLP (Forward Looking Projections Documentation and Outreach
 subtitle: "Flexible Large-Ensemble Platform"
 name: "SPEAR-FLP"
 description: "Documentation, presentations, and outreach for the SPEAR Flexible Large-Ensemble Platform."
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 markdown: kramdown
 permalink: pretty
 
