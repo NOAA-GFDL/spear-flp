@@ -3,19 +3,22 @@ title: "Outreach"
 layout: single
 permalink: /outreach/
 ---
-- Conference proceedings
+### AGU Fall Meeting 2025
 
-#### 1. Bridging Earth System Modeling and Societal Impact: A Scalable SPEAR Data Delivery System for Informed Decision-Making, AGU 25
+**1. Bridging Earth System Modeling and Societal Impact:  A Scalable SPEAR Data Delivery System for Informed Decision-Making**
 
-Presentation: 
+- **Abstract:** https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1968543
 
-#### 2. Earth System Data Stewardship in Practice: Building an Integrated, Collaborative, and Creditable Ecosystem, AGU 25
+- **Talk recording (MP4, archived):** https://github.com/NOAA-GFDL/spear-flp/releases/download/agu-25/A.Radhakrishnan.IN24A-02.AGU.2025.mp4
 
-Presentation: 
+**2. Earth System Data Stewardship in Practice: Building an Integrated, Collaborative, and Creditable Ecosystem**
 
-#### 3. Leveraging the Power of Data Catalogs in Data Publication Workflows, AGU 25
+- **Abstract:** https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1969253
+- **iPoster:** https://agu25.ipostersessions.com/Default.aspx?s=44-26-9F-90-8C-7E-A0-68-52-A1-CD-E0-BA-96-63-57
 
-Presentation: 
+**3. Leveraging the Power of Data Catalogs in Data Publication Workflows**
 
-- Other presentations 
-- Tutorials and Documentation links
+- **Abstract:**
+  https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1989155
+- **iPoster:**
+  tbd
