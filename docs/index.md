@@ -17,3 +17,4 @@ Community contributions through GitHub issues, discussions and PRs are accepted.
 - [Outreach](/outreach/)
 
 
+[Test People page](/people/)
