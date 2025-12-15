@@ -2,7 +2,7 @@
 layout: single
 ---
 
-### SPEAR FLP
+### SPEAR FLP Data stewardship
 
 This site hosts **documentation and outreach materials** for the **SPEAR Forward Looking Project**.
 
