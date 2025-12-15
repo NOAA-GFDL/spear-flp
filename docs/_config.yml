@@ -6,6 +6,8 @@ markdown: kramdown
 permalink: pretty
 
 minimal_mistakes_skin: "default"  # or "air", "contrast"
+url: "https://noaa-gfdl.github.io"
+baseurl: "/spear-flp"
 
 plugins:
   - jekyll-include-cache
