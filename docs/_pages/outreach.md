@@ -8,6 +8,7 @@ permalink: /outreach/
 **1. Bridging Earth System Modeling and Societal Impact:  A Scalable SPEAR Data Delivery System for Informed Decision-Making**
 
 - **Abstract:** <https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1968543>
+- **Slides:** <https://github.com/NOAA-GFDL/spear-flp/releases/download/agu-25/A.Radhakrishnan.AGU.2025.pdf>
 - **Talk recording (MP4, archived):** <https://github.com/NOAA-GFDL/spear-flp/releases/download/agu-25/A.Radhakrishnan.IN24A-02.AGU.2025.mp4>
 
 **2. Earth System Data Stewardship in Practice: Building an Integrated, Collaborative, and Creditable Ecosystem**
