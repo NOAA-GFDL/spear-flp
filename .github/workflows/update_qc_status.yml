@@ -23,7 +23,7 @@ jobs:
         run: |
           julia update_qc.jl "$AUTHOR" "$ISSUE_BODY"
         env:
-          AUTHOR: ${{ github.actor }}
+          AUTHOR: ${{ github.event.issue.user.login }}
           ISSUE_BODY: ${{ github.event.issue.body }}
       - name: Create Pull Request
         id: cpr
