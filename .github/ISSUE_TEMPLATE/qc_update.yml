@@ -29,7 +29,7 @@ body:
     id: time_range
     attributes:
       label: Time Range
-      description: 'Date format: "yyyy[mmddHH]-yyyy[mmddHH]" (see filenames). Enter multiple with commas separating them. Leave blank to select all time ranges for the specified experiment.'
+      description: 'Date format: "yyyymmddHH-yyyymmddHH" (please follow the format in the filenames). Enter multiple with commas separating them. Leave blank to select all time ranges for the specified experiment.'
       placeholder: 1921-1940, 1951-1980
   - type: dropdown
     id: pass_qc
