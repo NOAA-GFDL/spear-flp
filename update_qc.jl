@@ -10,7 +10,7 @@ function string_to_vector(x)
     strip.(split(strip(x, ['[',']',' ']),','))
 end
 
-function convert_timerange(x::String)
+function convert_timerange(x)
     y = split(x,'-')
     return DateTime.(y, datetime_format)
 end
