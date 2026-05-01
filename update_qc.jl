@@ -10,12 +10,12 @@ function string_to_vector(x)
     strip.(split(strip(x, ['[',']',' ']),','))
 end
 
-function convert_timerange(x::String)
+function convert_timerange(x)
     y = split(x,'-')
     return DateTime.(y, datetime_format)
 end
 
-function test_timerange(t::String, reported_times)
+function test_timerange(t, reported_times)
     truth = false
     x = convert_timerange(t)
     for rt in reported_times
