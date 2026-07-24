@@ -31,3 +31,30 @@ def test_timeranges(true_times, reported_times):
                 (rt[0] < tt[1] < (rt[1] + relativedelta(years=1)))
             )
     return truths
+
+def parse_body(input_string):
+    var_dict = {}
+    in_strings = [strip(x) for x in input_string.split('\n')][[2,6,10,14,18]]
+    
+    var_dict['variable_id'] = in_strings[0]
+    var_dict['frequency'] = in_strings[1]
+
+    if in_strings[2] != 'all':
+        var_dict['experiment_id'] = in_strings[2]
+    
+    if in_strings[3] != "_No response_":
+        var_dict['time_range'] = convert_timerange(in_strings[3])
+
+    if in_strings[4] == 'Yes':
+        pass_qc = True
+    elif in_strings[4] == 'No':
+        pass_qc = False
+    
+    return var_dict, pass_qc
+
+def update_qc(df, var_dict, qc_status, who_qc):
+    df.with_columns(
+        pass_qc = pl.when(
+            **var_dict
+        )
+    )
