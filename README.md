@@ -8,6 +8,26 @@ For time range, you can leave blank to select all time ranges for the given vari
 ```
 Please make sure all 30 ensemble members pass before reporting.
 
+Please include in the details additional information on how the dataset was checked. The expectation is to not provide detailed comments, but brief enough to touch on one of the below rubrics. As an example,
+> Used in tropical cyclone genesis analysis; output successfully integrated into workflow. This checked for utility and data readability within the scope of our application.
+
+# Quality Control Rubric
+
+| Rubric | Details | Example |
+| --- | --- | ---|
+| **Data Completeness** | No unexpected missing values | No unexpected NaNs; all expected years/months/variables are present. |
+| **Data integrity** | The data in post-processed output files are the same as the data in input files. | This is relevant for the data production teams. No data transfer errors, checksums or summary statistics match. |
+| **Dataset-readability** | Data is not corrupted | NetCDF file(s) opens successfully |
+| **Range and Boundary validation** | Data is accurate, summary statistics verified (Variables, units, value ranges, and summary statistics are verified, with no obvious processing errors.) | Surface temperature ranges from ~180–330 K and units are correctly specified as K; precipitation values are non-negative; monthly means are within expected bounds. |
+| **Metadata Consistency & Documentation** | Adequate metadata in the NetCDF header (time:units, descriptive name, etc) for all time chunks, README with available data and directory structure explained. | Variable names and units are documented; any incorrect or missing information is noted and reported. |
+| **Spatial and Temporal Consistency** | Expected spatial and temporal coverage, consistent time intervals | Global coverage spans 1921–2100; monthly data contain no missing months or duplicated timestamps. |
+| **Utility**\* | Relevance and utility in your application (e.g. used in studying “X”, or link to research/github code) | Used for tropical cyclone genesis analysis; output successfully integrated into workflow. |
+| **Scientific Plausibility**\*\* | Fields are physically reasonable. No obvious unrealistic artifacts or biases. Consistent with expected climatology and/or observations, where applicable. | Examples of potential issues: artificial spatial patterns in the fields, dried-up Great Lakes, or unrealistic precipitation or temperature patterns. |
+
+\*_Required minimum contribution for task force participants; additional QA checks are encouraged_
+
+\*\*_Optional, but please report any issues identified_
+
 # (Recommended) Accessing the data:
 
 The data is available on a Globus endpoint [at this link](https://app.globus.org/file-manager/collections/411dc91a-a5ae-43bd-ae12-d9225fee0ef7). We recommend using Globus CLI to download the data to your local machine, as it can offer the ability to download only the files of interest with a batch transfer. You will need Globus running on your machine ([Globus Connect Personal](https://www.globus.org/globus-connect-personal), usually) and the [Globus CLI](https://docs.globus.org/cli/) to follow these steps.
