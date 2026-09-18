@@ -5,10 +5,11 @@
 #SBATCH --mem=64G
 #SBATCH --partition=analysis
 
-RSYNC_FILELIST=$1
-FLAGS=$2
-SOURCE=$3
-DEST=$4
+DMGET_FILELIST=$1
+RSYNC_FILELIST=$2
+FLAGS=$3
+SOURCE=$4
+DEST=$5
 
 echo "Source directory: $SOURCE"
 echo "Destination directory: $DEST"
@@ -16,10 +17,16 @@ echo ""
 echo "Running rsync..."
 echo ""
 
+if [[ $FLAGS != *"n"* ]]; then
+    echo "Running dmget..."
+    dmget $(cat $DMGET_FILELIST)
+fi
+
 rsync $FLAGS --files-from=$RSYNC_FILELIST $SOURCE $DEST
 
 echo ""
 echo "Cleaning up tmp files..."
 
+rm $DMGET_FILELIST
 rm $RSYNC_FILELIST
 rmdir $(dirname $(realpath $RSYNC_FILELIST)) --ignore-fail-on-non-empty
