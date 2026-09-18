@@ -51,15 +51,20 @@ parser.add_argument(
     '--log_dir', 
     default=None
 )
+parser.add_argument(
+    '--data_dir',
+    default=None
+)
 
 def transfer_data(
     source_catalog,
     destination,
     filters={},
+    data_dir=None,
     tmp_dir=None,
     log_dir=None,
     dry_run=False,
-    run_one=False    
+    run_one=False
 ):
     if dry_run:
         rsync_flags = '-airnv'
@@ -68,6 +73,13 @@ def transfer_data(
         rsync_flags = '-airv'
     
     baseDir = Path(destination)
+
+    if data_dir:
+        dataDir = Path(data_dir)
+    else:
+        dataDir = baseDir / 'data'
+    dataDir.mkdir(parents=True)
+    print(f'Saving datasets to {str(dataDir)}')
 
     if tmp_dir:
         tmpDir = Path(tmp_dir)
@@ -140,6 +152,7 @@ if __name__ == '__main__':
         args.destination,
         log_dir=args.log_dir,
         dry_run=args.dry_run,
+        data_dir=args.data_dir,
         run_one=args.run_one,
         tmp_dir=args.tmp_dir,
         filters=filter_args
