@@ -52,9 +52,21 @@ def parse_body(input_string):
     
     return var_dict, pass_qc
 
-def update_qc(df, var_dict, qc_status, who_qc):
-    df.with_columns(
-        pass_qc = pl.when(
-            **var_dict
-        )
+def update_qc(df, var_dict, qc_status, qc_reporter):
+    return df.with_columns(
+        pass_qc = pl.when(**var_dict)
+            .then(True)
+            .otherwise(pl.col('pass_qc')),
+
+        who_qc = pl.when(**var_dict)
+            .then(qc_reporter)
+            .otherwise(pl.col('who_qc'))
     )
+
+def main(submitter, input_string):
+    df_gfdl = pl.read_csv(catalog_gfdl)
+    df_cmip = pl.read_csv(catalog_cmip)
+
+    param_dict, pass_qc = parse_body(input_string)
+
+    
