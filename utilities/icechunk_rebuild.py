@@ -16,14 +16,14 @@ import icechunk
 import arraylake as al
 
 def preprocess(ds:xr.Dataset, table_id) -> xr.Dataset:
-    if 'fx' in table_id:
+    if ('fx' in table_id) or ('Pt' in ds.frequency):
         ds = ds.set_coords(['lon_bnds', 'lat_bnds'])
     else:
         ds = ds.set_coords(['time_bnds', 'lon_bnds', 'lat_bnds'])
     # elevate the experiment id to a dimension so that 
     # ..._mfdataset automatically concats along that dimension
-    if ds.frequency == '6hr':
-        variant_id = ds.attrs['parent_variant_label']
+    if '6hr' in ds.frequency:
+        variant_id = ds.attrs['variant_label']
     else:
         variant_id = ds.attrs['parent_experiment_rip']
     experiment_id = ds.attrs['experiment_id']
@@ -32,6 +32,7 @@ def preprocess(ds:xr.Dataset, table_id) -> xr.Dataset:
 
 class SPEAR2IC:
     def __init__(self, bucket_url: str, ic_repo, parser=HDFParser()):
+        self.bucket_url = bucket_url
         self.s3_store = from_url(bucket_url, region="us-east-1", skip_signature=True)
         self.registry = ObjectStoreRegistry({bucket_url: self.s3_store})
         self.parser = parser
@@ -56,7 +57,7 @@ class SPEAR2IC:
                 if ('/'+table_id) in path and path.endswith('.nc'):
                     urls.append(path)
 
-        return [bucket+'/'+u for u in urls]
+        return [self.bucket_url+'/'+u for u in urls]
     
     def get_vds(self, experiment_id, table_id):
         urls = self.find_urls(experiment_id, table_id)
@@ -108,13 +109,27 @@ class SPEAR2IC:
             vds.vz.to_icechunk(store, group=groupname)
         return
 
-def __main__(arraylake_repo, s3_bucket):
+def main(arraylake_repo, s3_bucket):
     client = al.Client()
     repo = client.get_or_create_repo(arraylake_repo)
 
-    spear2ic = SPEAR2IC(bucket, repo)
+    spear2ic = SPEAR2IC(s3_bucket, repo)
 
-    for exp_id in ['historical', 'scenarioSSP5-85']:
+    for exp_id in ['historical']:
+        for tab_id in ['6hr', 'day']:
+            if spear2ic.group_exists(exp_id, tab_id):
+                print(f"Group {exp_id}/{tab_id} already exists, replacing...")
+                t = time.time()
+                vds = spear2ic.get_vds(exp_id, tab_id)
+                spear2ic.replace_group(vds, f"{exp_id}/{tab_id}")
+                print(f"{time.time() - t} seconds to open and replace {exp_id}/{tab_id}.")
+            else:
+                t = time.time()
+                vds = spear2ic.get_vds(exp_id, tab_id)
+                spear2ic.commit_group(vds, f"{exp_id}/{tab_id}")
+                print(f"{time.time() - t} seconds to open and commit {exp_id}/{tab_id}.")
+
+    for exp_id in ['scenarioSSP5-85']:
         for tab_id in ['fx', 'Ofx', 'Amon', 'Omon', '6hr', 'day']:
             if spear2ic.group_exists(exp_id, tab_id):
                 print(f"Group {exp_id}/{tab_id} already exists, replacing...")
