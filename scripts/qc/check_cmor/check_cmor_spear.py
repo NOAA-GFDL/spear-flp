@@ -82,15 +82,20 @@ def main(
     ]):
         exp_id,tab_id,var_id = grp
 
+        print(f"Checking {grp}...")
+
         in_csv = (csv_base_path +
             mapping_dict["experiment_id"][exp_id] + '/' +
             mapping_dict["table_id"][var_id][tab_id] + '/' +
             mapping_dict["variable_id"][var_id] + '.csv')
 
         out_csv = (csv_base_path +
-            exp_id_dict[exp_id] + '/' +
-            table_dict[var_id][tab_id] + '/' +
-            var_names[var_id] + '_cmor' + '.csv')
+            mapping_dict["experiment_id"][exp_id] + '/' +
+            mapping_dict["table_id"][var_id][tab_id] + '/' +
+            mapping_dict["variable_id"][var_id] + '_cmor' + '.csv')
+        
+        print(f"Getting pre-cmor stats from {in_csv}")
+        print(f"Outputting post-cmor stats and results to {out_csv}")
 
         correct_values = pl.read_csv(in_csv)
 
