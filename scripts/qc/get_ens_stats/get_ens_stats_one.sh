@@ -1,5 +1,5 @@
 #!/bin/bash 
-# note this is for running on analysis nodes at GFDL
+# note this is an example for running on analysis nodes at GFDL
 
 #SBATCH --partition=analysis
 #SBATCH --time=72:00:00
@@ -10,6 +10,8 @@
 #SBATCH --mem=128GB
 #SBATCH --constraint=avx2
 
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
 module load miniforge
-conda activate aria
-python ./get_ens_stats.py $1 $2
+conda activate /work/a3r/conda/envs/aria/ # replace with path to your env
+python $SCRIPTPATH/get_ens_stats.py $1 $2
