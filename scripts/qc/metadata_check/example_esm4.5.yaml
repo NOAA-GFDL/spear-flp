@@ -1,0 +1,99 @@
+expected_metadata:
+  dimensions:
+    lat: 180
+    lon: 288
+    time: 12
+  globals:
+    Conventions: CF-1.12
+    activity_id: CMIP
+    archive_id: WCRP
+    area_label: u
+    branch_method: no parent
+    branded_variable: clivi_tavg-u-hxy-u
+    branding_suffix: tavg-u-hxy-u
+    cmor_version: 3.15.3
+    contact: gfdl.climate.model.info@noaa.gov
+    data_specs_version: MIP-DS7.1.0.0
+    description: Baseline for effective radiative forcing (ERF) calculations. `piControl`
+      with prescribed sea-surface temperatures and sea-ice concentrations from a climatology
+      of the model's `piControl` simulation.
+    drs_specs: MIP-DRS7
+    experiment: Baseline for effective radiative forcing (ERF) calculations. `piControl`
+      with prescribed sea-surface temperatures and sea-ice concentrations from a climatology
+      of the model's `piControl` simulation.
+    experiment_id: piClim-control
+    forcing_index: f1
+    frequency: mon
+    grid: Horizontal grid cell with a cubed sphere grid type and 0.9375 x 0.9375 degree
+      resolution.
+    grid_label: g173
+    horizontal_label: hxy
+    initialization_index: i1
+    institution: US National Oceanic and Atmospheric Administration's Geophysical
+      Fluid Dynamics Laboratory.
+    institution_id: NOAA-GFDL
+    license: CC-BY-4.0; CMIP7 data produced by NOAA-GFDL is licensed under a Creative
+      Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0).
+      Consult https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Guidance_for_users/#2-terms-of-use-and-citations-requirements
+      for terms of use governing CMIP7 output, including citation requirements and
+      proper acknowledgment. The data producers and data providers make no warranty,
+      either express or implied, including, but not limited to, warranties of merchantability
+      and fitness for a particular purpose. All liabilities arising from the supply
+      of the information (including any liability arising in negligence) are excluded
+      to the fullest extent permitted by law.
+    license_id: CC-BY-4.0
+    mip_era: CMIP7
+    nominal_resolution: 100 km
+    parent_activity_id: CMIP
+    parent_experiment_id: piControl
+    parent_mip_era: CMIP7
+    parent_source_id: GFDL-ESM4p5
+    parent_time_units: days since 0001-01-01
+    parent_variant_label: r1i1p1f1
+    physics_index: p1
+    product: model-output
+    realization_index: r1
+    realm: atmos
+    region: glb
+    source: 'GFDL-ESM4p5: aerosol: gfdl-am4p5-fullchem; atmosphere: gfdl-am4p5; land-surface:
+      gfdl-lm4p5; ocean-biogeochemistry: cobaltv3p1; ocean: gfdl-om4p5; sea-ice: sis2'
+    source_id: GFDL-ESM4p5
+    sub_experiment: none
+    sub_experiment_id: none
+    table_info: 'Name: CMIP7_atmos.json; Creation Date:(2026-07-21 13:16:24) MD5:28339aa355908b9331150e1536f5e384'
+    temporal_label: tavg
+    title: GFDL-ESM4p5 output prepared for CMIP7
+    variable_id: clivi
+    variant_label: r1i1p1f1
+    vertical_label: u
+  variables:
+    clivi:
+      cell_methods: 'area: time: mean'
+      long_name: Ice Water Path
+      standard_name: atmosphere_mass_content_of_cloud_ice
+      units: kg m-2
+    lat:
+      axis: Y
+      bounds: lat_bnds
+      long_name: Latitude
+      standard_name: latitude
+      units: degrees_north
+    lon:
+      axis: X
+      bounds: lon_bnds
+      long_name: Longitude
+      standard_name: longitude
+      units: degrees_east
+    time:
+      axis: T
+      bounds: time_bnds
+      calendar: 365_day
+      long_name: Time Intervals
+      standard_name: time
+      units: days since 0001-01-01 00:00:00
+input_directory: /work3/ker/fremor_testing/CMIP7/piClim-control_cmorized/MIP-DRS7/CMIP7/CMIP/NOAA-GFDL/GFDL-ESM4p5/piClim-control/
+log_file: clivi_metadata.log
+output_directory: .
+output_filename: failed_clivi_metadata.csv
+variable_name: clivi
+member_search_pattern: 'r1i1p1f1'
