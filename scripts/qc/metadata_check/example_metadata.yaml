@@ -1,0 +1,34 @@
+# Configuration for SPEAR Metadata Integrity Check: Max Temp
+
+input_directory: "/data/2/GFDL-LARGE-ENSEMBLES/TFTEST/SPEAR_c192_o1_Scen_SSP585_IC2011_K50/"
+output_directory: "results/tables"
+output_filename: "failed_metadata_tmin_fut.csv"
+log_file: "metadata_integrity_tmin_fut.log"
+
+variable_name: "t_ref_min"
+
+# The Rules for this specific variable
+expected_metadata:
+  globals:
+    experiment_id: ["scenarioSSP5-85"]
+    # Adjust this to match whatever your global frequency attribute says.
+    frequency: "daily" 
+    source_id: "GFDL-SPEAR-MED"
+    activity_id: "SPEAR"
+  dimensions:
+    lat: 360
+    lon: 576
+    bnds: 2
+  variables:
+    t_ref_min:
+      units: "deg_k"
+      cell_methods: "time: min"
+      missing_value: 1.0e+20
+      _FillValue: 1.0e+20
+    lat:
+      units: "degrees_N"  # Note: your ncdump said degrees_N, not degrees_north!
+    lon:
+      units: "degrees_E"
+    time:
+      calendar: "JULIAN"
+      cartesian_axis: "T"
