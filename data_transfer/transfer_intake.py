@@ -188,7 +188,7 @@ def transfer_data(
     for grp,df in subdf.group_by(path_template):
         sourceDir = Path(df['path'][0]).parent
 
-        dest_folder = Path(destination) / '/'.join(grp)
+        dest_folder = Path(dataDir) / '/'.join(grp)
         dest_folder.mkdir(parents=True, exist_ok=True)
 
         if run_dmget:
