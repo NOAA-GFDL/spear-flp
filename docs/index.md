@@ -10,6 +10,17 @@ Data availability: Check this out <https://www.gfdl.noaa.gov/spear_large_ensembl
 
 Contact us: Open an issue at <https://github.com/NOAA-GFDL/spear-flp/>
 
+**GFDL's 71st Anniversary Celebration Resources:**
+
+MDTF GitHub Repository: <https://github.com/NOAA-GFDL/MDTF-diagnostics>
+MDTF Documentation: <https://mdtf-diagnostics.readthedocs.io/en/main/>
+
+SPEAK GitHub Repository: <https://github.com/zappalaja/SPEAR_Earth_System_Data_Assistant>
+SPEAK-Lite GitHub Repository: <https://github.com/zappalaja/speak-lite>
+
+GFDL Data Science Group or Poster Questions? Reach out to <Jake.Zappala@noaa.gov> or <Janice.Kim@noaa.gov> for more information!
+
+
 ---
 
 **Explore**
