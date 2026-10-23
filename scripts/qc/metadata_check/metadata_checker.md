@@ -1,5 +1,7 @@
 # Metadata Checker
 
+Checks that the metadata within a set of netCDF files (stored in `input_directory/<member_search_pattern>/.../*.nc`) matches the values in `expected_metadata`.
+
 The main script is `metadata_checker.py`, authored by Soelem Aafnan Bhuiyan.
 
 This script parses a config yaml to inform the checks that it performs. Check `example_metadata.yaml` for an example configuration for minimum daily surface temperature, `t_ref_min`, at GFDL. The configuration file takes the following options:
