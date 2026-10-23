@@ -10,8 +10,6 @@
 #SBATCH --mem=128GB
 #SBATCH --constraint=avx2
 
-SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-
 module load miniforge
 conda activate /work/a3r/conda/envs/aria/ # replace with path to your env
-python $SCRIPTPATH/get_ens_stats.py $1 $2
+python /work/a3r/Documents/code/spear-flp/scripts/qc/get_ens_stats/get_ens_stats.py --config $1
