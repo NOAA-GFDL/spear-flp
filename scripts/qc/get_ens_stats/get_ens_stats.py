@@ -4,7 +4,7 @@ from pathlib import Path
 import ens_stats as es
 import polars as pl
 
-parser = argparse.ArgumentParser(description="Calculate ensemble-level stats.")
+parser = argparse.ArgumentParser(description="Calculate summary statistics for datasets found in an intake-esm catalog.")
 parser.add_argument(
     "input_catalog",
     nargs="?",
