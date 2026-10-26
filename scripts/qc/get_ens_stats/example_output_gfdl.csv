@@ -1,0 +1,2 @@
+experiment_id,realm,frequency,variable_id,member_id,min,max,mean,std
+SPEAR_c192_o1_Hist_AllForc_IC1921_K50,atmos_4xdaily_avg,6hr,precip,pp_ens_15,0.0,0.009784978814423084,0.00002749428676906973,0.00011217362771276385

@@ -1,0 +1,2 @@
+experiment_id,table_id,variable_id,member_id,min,max,mean,std
+historical,6hr,pr,r15i1p1f1,0.0,0.009784978814423084,0.00002749428676906973,0.00011217362771276385
