@@ -1,18 +1,28 @@
 {
-    "experiment_id" : {
-        "historical" : "SPEAR_c192_o1_Hist_AllForc_IC1921_K50",
-        "scenarioSSP5-85" : "SPEAR_c192_o1_Scen_SSP585_IC2011_K50"
+    "table_id": {
+        "map_from": ["variable_id", "table_id"],
+        "map_to": "realm",
+        "mappings": {
+            "psl" : {"6hr" : "atmos_4xdaily"},
+            "prsn" : {"6hr" : "atmos_4xdaily_avg"},
+            "tasmin" : {"day" : "atmos_daily"},
+            "tasmax" : {"day" : "atmos_daily"},
+            "pr" : {"6hr" : "atmos_4xdaily_avg"}
+        }
     },
-    "table_id" : {
-        "psl" : {"6hr" : "atmos_4xdaily"},
-        "prsn" : {"6hr" : "atmos_4xdaily_avg"},
-        "tasmin" : {"day" : "atmos_daily"},
-        "tasmax" : {"day" : "atmos_daily"}
+    "experiment_id": {
+        "mappings": {
+            "historical" : "SPEAR_c192_o1_Hist_AllForc_IC1921_K50",
+            "scenarioSSP5-85" : "SPEAR_c192_o1_Scen_SSP585_IC2011_K50"
+        }
     },
-    "variable_id" : {
-        "psl" : "slp",
-        "prsn" : "snow_tot",
-        "tasmin" : "t_ref_min",
-        "tasmax" : "t_ref_max"
+    "variable_id": {
+        "mappings": {
+            "psl" : "slp",
+            "prsn" : "snow_tot",
+            "tasmin" : "t_ref_min",
+            "tasmax" : "t_ref_max",
+            "pr" : "precip"
+        }
     }
 }
