@@ -1,5 +1,5 @@
 input_catalog: https://raw.githubusercontent.com/NOAA-GFDL/spear-flp/refs/heads/main/catalog_blue.csv
-output_file: example_output.csv
+output_file: example_output_gfdl.csv
 group_by: ["experiment_id", "realm", "frequency"]
 variable_column: "variable_id"
 member_column: "member_id"
@@ -7,6 +7,7 @@ concatenate_by: "time_range"
 ignore_columns: ["standard_name", "pass_qc", "who_qc"]
 filter_by:
   experiment_id: "SPEAR_c192_o1_Hist_AllForc_IC1921_K50"
-  realm: "ocean"
-  frequency: "mon"
-  variable_id: "ssh"
+  realm: "atmos_4xdaily_avg"
+  frequency: "6hr"
+  variable_id: "precip"
+  member_id: "pp_ens_15"

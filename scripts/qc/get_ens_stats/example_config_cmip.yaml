@@ -1,0 +1,12 @@
+input_catalog: /work/a3r/catalogs/data2_cmip/catalog.csv
+output_file: example_output_cmip.csv
+group_by: ["experiment_id", "table_id"]
+variable_column: "variable_id"
+member_column: "member_id"
+concatenate_by: "time_range"
+ignore_columns: ["standard_name", "pass_qc", "who_qc"]
+filter_by:
+  experiment_id: "historical"
+  table_id: "6hr"
+  variable_id: "pr"
+  member_id: "r15i1p1f1"
