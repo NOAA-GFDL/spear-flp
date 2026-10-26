@@ -35,6 +35,7 @@ def get_ensemble_stats(
     catalog_df = pl.read_csv(input_catalog).filter(
         *[pl.col(k).is_in(es._to_list(v)) for k,v in filter_by.items()]
     )
+    print(f"Filtered catalog has {catalog_df.shape[0]} entries.")
 
     skip_columns = es._get_skip_columns(concatenate_by,ignore_columns)
     group_columns = es.get_group_columns(
