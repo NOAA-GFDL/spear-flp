@@ -21,7 +21,6 @@ body:
       options:
         - All
         - Historical
-        - SSP585
       default: 0
     validations:
       required: true
