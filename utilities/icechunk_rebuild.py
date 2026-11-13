@@ -108,6 +108,14 @@ class SPEAR2IC:
             del root[groupname]
             vds.vz.to_icechunk(store, group=groupname)
         return
+    
+    def delete_group(self, groupname, branch="main", message=None):
+        if message is None:
+            message = f"Deleting group {groupname}"
+        with self.repo.transaction(branch, message=message) as store:
+            root = zarr.open_group(store, zarr_format=3, mode='r+')
+            del root[groupname]
+        
 
 def main(arraylake_repo, s3_bucket):
     client = al.Client()
